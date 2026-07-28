@@ -1,0 +1,1008 @@
+/* ==========================================================
+   Happy Birthday Sonali 💜
+   Retro Space Theme
+   ========================================================== */
+
+/* -------------------------------
+   CSS Variables
+-------------------------------- */
+
+:root{
+
+    --bg-dark:#040405;
+    --bg-mid:#111423;
+
+    --purple:#8B5CF6;
+    --purple-light:#B388FF;
+
+    --pink:#FF5FBF;
+
+    --cyan:#64F2FF;
+
+    --yellow:#FFE46A;
+
+    --white:#ffffff;
+
+    --card:rgba(16,18,32,.75);
+
+    --shadow:0 25px 80px rgba(0,0,0,.55);
+
+    --radius:30px;
+
+}
+
+/* -------------------------------
+   Reset
+-------------------------------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    min-height:100vh;
+    overflow-x:hidden;
+
+    background:
+        radial-gradient(circle at 20% 10%, rgba(110,60,255,.12), transparent 35%),
+        radial-gradient(circle at 80% 80%, rgba(0,180,255,.08), transparent 30%),
+        linear-gradient(180deg,#050507 0%,#090B13 45%,#020203 100%);
+
+    color:white;
+    font-family:'Fredoka',sans-serif;
+    position:relative;
+
+    isolation:isolate;
+}
+
+
+/* ==========================================================
+   Animated Background
+========================================================== */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-1;
+
+}
+
+.background::before{
+
+    content:"";
+
+    position:absolute;
+    inset:-20%;
+
+    background:
+
+        radial-gradient(circle at 25% 30%,
+        rgba(155,90,255,.18),
+        transparent 30%),
+
+        radial-gradient(circle at 80% 60%,
+        rgba(70,140,255,.12),
+        transparent 30%),
+
+        radial-gradient(circle at 60% 10%,
+        rgba(255,80,180,.08),
+        transparent 25%);
+
+    filter:blur(80px);
+
+    animation:nebulaMove 40s ease-in-out infinite alternate;
+
+}
+
+@keyframes nebulaMove{
+
+    from{
+
+        transform:translateX(-60px);
+
+    }
+
+    to{
+
+        transform:translateX(60px);
+
+    }
+
+}
+
+/* ==========================================================
+   Tiny Stars
+========================================================== */
+
+.stars{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+    radial-gradient(white 1px, transparent 1px),
+
+    radial-gradient(#8be9fd 1px, transparent 1px),
+
+    radial-gradient(#ffd95b 1px, transparent 1px);
+
+    background-size:
+
+        140px 140px,
+        220px 220px,
+        180px 180px;
+
+    animation:
+        driftStars 80s linear infinite;
+
+    opacity:.8;
+
+}
+
+@keyframes driftStars{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-200px);
+    }
+
+}
+
+
+
+
+/* ==========================================================
+   Twinkling Overlay
+========================================================== */
+
+.twinkling-stars{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle,#fff 1px,transparent 1px);
+
+    background-size:110px 110px;
+
+    animation:
+        twinkle 4s ease-in-out infinite;
+
+    opacity:.45;
+
+}
+
+@keyframes twinkle{
+
+    0%,100%{
+
+        opacity:.25;
+
+    }
+
+    50%{
+
+        opacity:.8;
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   Saturn
+========================================================== */
+
+.saturn{
+
+    position:absolute;
+
+    width:150px;
+
+    height:150px;
+
+    border-radius:50%;
+
+    right:6%;
+
+    top:10%;
+
+    background:
+        radial-gradient(circle at 30% 30%,
+        #ffe08f,
+        #f5b35d);
+
+    box-shadow:
+
+        0 0 20px rgba(255,220,120,.3),
+        0 0 60px rgba(255,210,90,.45),
+        0 0 120px rgba(255,180,60,.18);
+
+    animation:
+        floatPlanet 12s ease-in-out infinite;
+
+}
+
+.saturn::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:190px;
+
+    height:40px;
+
+    border:6px solid rgba(255,255,255,.35);
+
+    border-radius:50%;
+
+    left:-20px;
+
+    top:52px;
+
+    transform:rotate(-15deg);
+
+}
+
+
+/* ==========================================================
+   Moon
+========================================================== */
+
+.moon{
+
+    position:absolute;
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:#eeeeee;
+
+    left:8%;
+
+    top:15%;
+
+    box-shadow:
+
+        0 0 30px rgba(255,255,255,.35);
+
+    animation:
+        floatPlanet 8s ease-in-out infinite reverse;
+
+}
+
+@keyframes floatPlanet{
+
+    0%{
+
+        transform:
+            translateY(0px);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-15px);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(0px);
+
+    }
+
+}
+
+
+/* ==========================================================
+   Main Layout
+========================================================== */
+
+main{
+
+    width:min(1100px,92%);
+
+    margin:auto;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:80px 20px;
+
+}
+
+
+/* ==========================================================
+   Hero
+========================================================== */
+
+.hero{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:28px;
+
+}
+
+.title{
+
+    font-family:"Press Start 2P",cursive;
+
+    font-size:clamp(2rem,5vw,4.5rem);
+
+    color:#FFF2A5;
+
+    text-shadow:
+
+        0 0 10px rgba(255,220,120,.5),
+        0 0 30px rgba(255,210,80,.35),
+        0 0 80px rgba(255,180,0,.18);
+
+}
+
+.subtitle{
+
+    font-size:1.25rem;
+
+    color:#E7E8FF;
+
+    max-width:600px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+    opacity:.9;
+
+}
+
+
+/* ==========================================================
+   Button
+========================================================== */
+
+#surpriseButton{
+
+    margin:auto;
+
+    padding:18px 52px;
+
+    border:none;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:1.2rem;
+
+    font-weight:700;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #ff5fbf,
+        #8b5cf6);
+
+    box-shadow:
+
+        0 0 20px rgba(255,95,191,.35),
+        0 10px 40px rgba(139,92,246,.45);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+#surpriseButton:hover{
+
+    transform:
+        translateY(-6px)
+        scale(1.04);
+
+    box-shadow:
+
+        0 0 35px rgba(255,95,191,.6),
+        0 20px 60px rgba(139,92,246,.6);
+
+}
+
+#surpriseButton:active{
+
+    transform:scale(.95);
+
+}
+
+#surpriseButton:focus-visible{
+
+    outline:3px solid var(--cyan);
+
+    outline-offset:5px;
+
+}
+
+@keyframes pulse{
+
+    50%{
+
+        box-shadow:
+
+        0 0 60px rgba(255,112,200,.75);
+
+    }
+
+}
+
+
+/* ==========================================================
+   Rocket
+========================================================== */
+
+#rocket{
+
+    position:fixed;
+
+    font-size:64px;
+
+    left:-180px;
+
+    bottom:-180px;
+
+    z-index:200;
+
+    pointer-events:none;
+
+}
+
+.rocket-body{
+
+    animation:
+        rocketFloat 2.6s ease-in-out infinite;
+
+    filter:
+
+        drop-shadow(0 0 12px rgba(255,255,255,.5));
+
+}
+
+.rocket-flame{
+
+    width:14px;
+
+    height:28px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:
+
+    linear-gradient(
+
+        orange,
+
+        yellow,
+
+        transparent);
+
+    animation:
+        flame .18s infinite alternate;
+
+}
+
+@keyframes flame{
+
+    from{
+
+        transform:scaleY(.8);
+
+    }
+
+    to{
+
+        transform:scaleY(1.25);
+
+    }
+
+}
+
+@keyframes rocketFloat{
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+
+/* ==========================================================
+   Pixel Decorations
+========================================================== */
+
+.pixel-decoration{
+
+    position:fixed;
+
+    font-size:34px;
+
+    opacity:.85;
+
+    user-select:none;
+
+    pointer-events:none;
+
+}
+
+.invader-left{
+
+    top:18%;
+
+    left:4%;
+
+}
+
+.invader-right{
+
+    top:24%;
+
+    right:5%;
+
+}
+
+.star-one{
+
+    left:12%;
+
+    bottom:18%;
+
+}
+
+.star-two{
+
+    right:18%;
+
+    bottom:22%;
+
+}
+
+.star-three{
+
+    right:45%;
+
+    top:12%;
+
+}
+
+
+/* ==========================================================
+   Hidden Card
+========================================================== */
+
+.hidden{
+
+    display:none;
+
+}
+
+#birthdayCard{
+
+    margin-top:80px;
+
+    width:100%;
+
+}
+
+.birthday-card{
+
+    max-width:720px;
+
+    margin:auto;
+
+    background:
+
+        linear-gradient(
+        145deg,
+        rgba(20,24,42,.92),
+        rgba(12,15,28,.95));
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+
+        0 20px 70px rgba(0,0,0,.6),
+
+        0 0 60px rgba(139,92,246,.15);
+
+}
+
+
+/* ==========================================================
+   Photo
+========================================================== */
+
+.photo-wrapper{
+
+    width:min(400px,100%);
+
+    margin:auto;
+
+}
+
+#birthdayPhoto{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:24px;
+
+    border:4px solid rgba(255,255,255,.9);
+
+    box-shadow:
+     
+        0 20px 50px rgba(0,0,0,.45),
+
+        0 0 40px rgba(255,255,255,.18),
+
+        0 0 60px rgba(139,92,246,.22);
+
+    animation:
+        floatPhoto 4s ease-in-out infinite;
+
+}
+
+@keyframes floatPhoto{
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+
+/* ==========================================================
+   Message
+========================================================== */
+
+#birthdayMessage{
+
+    margin-top:32px;
+
+    font-size:clamp(1.6rem,3vw,2.4rem);
+
+    color:var(--yellow);
+
+    line-height:1.5;
+
+    text-shadow:
+
+        0 0 15px rgba(255,217,91,.55);
+
+}
+
+
+/* ==========================================================
+   Confetti Canvas
+========================================================== */
+
+#confettiCanvas{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:999;
+
+}
+
+
+/* ==========================================================
+   Responsive
+========================================================== */
+
+@media(max-width:768px){
+
+    .title{
+
+        font-size:2rem;
+
+        line-height:1.5;
+
+    }
+
+    .subtitle{
+
+        font-size:1.1rem;
+
+    }
+
+    #surpriseButton{
+
+        width:100%;
+
+        max-width:320px;
+
+    }
+
+    .birthday-card{
+
+        padding:28px;
+
+        transition:
+
+            transform .5s ease,
+
+            box-shadow .5s ease;
+
+    }
+
+    .birthday-card:hover{
+
+        transform:
+
+            translateY(-8px);
+
+        box-shadow:
+
+            0 30px 80px rgba(0,0,0,.6),
+
+            0 0 60px rgba(139,92,246,.25);
+
+    }
+
+    .saturn{
+
+        width:110px;
+        height:110px;
+
+    }
+
+    .moon{
+
+        width:50px;
+        height:50px;
+
+    }
+
+}
+
+/* ==========================================================
+   Accessibility
+========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    *{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
+
+#heartsContainer,
+#sparkleContainer{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:500;
+
+}
+
+/* Generated Effects */
+
+.floating-heart,
+.sparkle,
+.ambient-sparkle,
+.floating-pixel,
+.generated-star{
+
+    position:absolute;
+
+    pointer-events:none;
+
+    user-select:none;
+
+}
+
+
+.floating-heart{
+
+    font-size:28px;
+
+    animation:
+        floatAway 3s ease-out forwards;
+
+}
+
+
+@keyframes floatAway{
+
+    from{
+
+        opacity:1;
+
+        transform:
+        translate(0,0)
+        scale(1);
+
+    }
+
+    to{
+
+        opacity:0;
+
+        transform:
+        translate(var(--x),var(--y))
+        scale(.4);
+
+    }
+
+}
+
+
+.sparkle{
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:white;
+
+    animation:
+        sparkleFade 1s ease-out forwards;
+
+}
+
+
+@keyframes sparkleFade{
+
+    from{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        opacity:0;
+
+        transform:scale(0);
+
+    }
+
+}
+
+#spaceObjects{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+}
+
+
+.generated-planet{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    box-shadow:
+        0 0 20px rgba(255,255,255,.2),
+        0 0 60px rgba(139,92,246,.25);
+
+    animation:
+        randomPlanetFloat var(--float-speed) ease-in-out infinite alternate;
+
+}
+
+
+@keyframes randomPlanetFloat{
+
+    from{
+
+        transform:
+        translateY(0px)
+        rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+        translateY(var(--float-distance))
+        rotate(15deg);
+
+    }
+
+}
+
+.ringed::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:140%;
+
+    height:35%;
+
+    border:3px solid rgba(255,255,255,.35);
+
+    border-radius:50%;
+
+    left:-20%;
+
+    top:35%;
+
+    transform:rotate(-20deg);
+
+}
