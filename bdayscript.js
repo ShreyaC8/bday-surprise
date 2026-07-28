@@ -11,7 +11,7 @@
 const birthdayName = "Sonali";
 
 const birthdayMessage =
-`Happy Birthday BESTieee! I hope you know you are truly perfect and I hope you had an amazing day. <3`;
+`Happy Birthday BESTieee! I hope you know you are truly perfect. We will celebrate when you're back, but until then, have an amazing day. <3`;
 
 const shootingStarMinDelay = 8000;
 const shootingStarMaxDelay = 15000;
